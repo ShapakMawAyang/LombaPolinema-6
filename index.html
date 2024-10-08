@@ -1,0 +1,378 @@
+                <!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8" />
+                    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+                    <title>Kota Madiun</title>
+                    <meta name="description" content="" />
+                    <meta name="keywords" content="" />
+
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        const observer = new IntersectionObserver(
+                          (entries) => {
+                            entries.forEach((entry) => {
+                              if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                              }
+                            });
+                          },
+                          {
+                            threshold: 0.1, // Elemen akan muncul ketika 10% dari elemen terlihat
+                          },
+                        );
+
+                        const tentangElement = document.querySelector(".tentang");
+                        observer.observe(tentangElement);
+                      });
+
+                      document.addEventListener("DOMContentLoaded", function () {
+                        const gaskanBtn = document.getElementById("gaskanBtn");
+                        const hiddenText = document.getElementById("hiddenText");
+                        const hero = document.getElementById("hero");
+
+                        gaskanBtn.addEventListener("click", function (e) {
+                          e.preventDefault();
+                          hiddenText.style.opacity = "1";
+                          hiddenText.style.transform = "translateY(0)";
+
+                          setTimeout(() => {
+                            window.scrollTo({
+                              top: hiddenText.offsetTop,
+                              behavior: "smooth",
+                            });
+                          }, 300);
+                        });
+
+                        window.addEventListener("scroll", function () {
+                          const heroBottom = hero.offsetTop + hero.offsetHeight;
+                          if (window.pageYOffset > heroBottom) {
+                            hero.style.opacity = "0";
+                            hero.style.transition = "opacity 0.5s ease-in-out";
+                          } else {
+                            hero.style.opacity = "1";
+                          }
+                        });
+                      });
+                    </script>
+
+                    <!-- Favicons -->
+                    <link href="assets/img/lambang-Kota-Madiun_BW_237-design.png" rel="icon" />
+                    <link
+                      href="assets/img/lambang-Kota-Madiun_237-design.png"
+                      rel="apple-touch-icon"
+                    />
+
+                    <!-- Fonts -->
+                    <link href="https://fonts.googleapis.com" rel="preconnect" />
+                    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+                    <link
+                      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+                      rel="stylesheet"
+                    />
+
+                    <!-- Vendor CSS Files -->
+                    <link
+                      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+                      rel="stylesheet"
+                    />
+                    <link
+                      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+                      rel="stylesheet"
+                    />
+                    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+                    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+                    <link
+                      href="assets/vendor/glightbox/css/glightbox.min.css"
+                      rel="stylesheet"
+                    />
+
+                    <!-- Main CSS File -->
+                    <link href="assets/css/main.css" rel="stylesheet" />
+                  </head>
+
+                  <body class="index-page">
+                    <header
+                      id="header"
+                      class="header d-flex align-items-center light-background sticky-top"
+                    >
+                      <div
+                        class="container-fluid position-relative d-flex align-items-center justify-content-between"
+                      >
+                        <a
+                          href="index.html"
+                          class="logo d-flex align-items-center me-auto me-xl-0"
+                        >
+                          <!-- Uncomment the line below if you also wish to use an image logo -->
+                          <!-- <img src="assets/img/logo.png" alt=""> -->
+                          <h1 class="sitename">Kota Madiun</h1>
+                        </a>
+
+                        <nav id="navmenu" class="navmenu">
+                          <ul>
+                            <li><a href="index.html" class="active">Beranda</a></li>
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="pariwisata.html">Tempat Pariwisata</a></li>
+                            <li><a href="kuliner.html">Kuliner</a></li>
+                            <li><a href="budaya.html">Budaya & Tradisi</a></li>
+                          </ul>
+                          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                        </nav>
+
+                        <div class="header-social-links">
+                          <img
+                            src="assets/img/lambang-Kota-Madiun_237-design.png"
+                            alt="Lambang Kota Madiun"
+                            style="width: 50px; height: 50px"
+                          />
+                        </div>
+                      </div>
+                    </header>
+
+                    <main class="main">
+                      <!-- Hero Section -->
+                      <section id="hero" class="hero section">
+                        <img src="assets/img/balaikota.jpg" alt="" data-aos="fade-in" />
+
+                        <div
+                          class="container text-center"
+                          data-aos="zoom-out"
+                          data-aos-delay="100"
+                        >
+                          <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                              <h2
+                                style="
+                                  color: white;
+                                  text-shadow:
+                                    -2px -2px 0 #000,
+                                    2px -2px 0 #000,
+                                    -2px 2px 0 #000,
+                                    2px 2px 0 #000;
+                                  font-weight: 800;
+                                "
+                              >
+                                Kota Madiun
+                              </h2>
+                              <p
+                                style="
+                                  color: white;
+                                  text-shadow:
+                                    -2px -2px 0 #000,
+                                    2px -2px 0 #000,
+                                    -2px 2px 0 #000,
+                                    2px 2px 0 #000;
+                                  font-weight: 600;
+                                "
+                              >
+                                Ayo rek dolan ning Madiun AE
+                              </p>
+                              <a href="#" class="btn-get-started" id="gaskanBtn">Gaskan</a>
+                              <style>
+                                #gaskanBtn:hover {
+                                  filter: brightness(80%);
+                                  transition: filter 0.3s ease;
+                                }
+                              </style>
+                              <script>
+                                document.getElementById('gaskanBtn').addEventListener('click', function(e) {
+                                  e.preventDefault();
+                                  const tentangDiv = document.querySelector('.tentang');
+                                  const scrollDuration = 1500; // Adjust this value to make it less smooth
+                                  const scrollStep = -50; // Negative value for a choppier scroll
+
+                                  function scrollToTentang(timestamp) {
+                                    if (!scrollStart) scrollStart = timestamp;
+                                    const elapsed = timestamp - scrollStart;
+
+                                    window.scrollTo(0, easeInOutQuad(elapsed, start, distance, scrollDuration));
+
+                                    if (elapsed < scrollDuration) {
+                                      requestAnimationFrame(scrollToTentang);
+                                    }
+                                  }
+
+                                  const start = window.pageYOffset;
+                                  const distance = tentangDiv.getBoundingClientRect().top;
+                                  let scrollStart = null;
+
+                                  function easeInOutQuad(t, b, c, d) {
+                                    t /= d / 2;
+                                    if (t < 1) return c / 2 * t * t + b;
+                                    t--;
+                                    return -c / 2 * (t * (t - 2) - 1) + b;
+                                  }
+
+                                  requestAnimationFrame(scrollToTentang);
+                                });
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /Hero Section -->
+
+                      <!-- Hidden Text -->
+                       <section id="hidden-text">
+                        <div class="container" data-aos="fade-up" data-aos-delay="100"  >
+                          <div class="row justify-content-center">
+                            <div class="container-fluid">
+                              <div class="tentang"  style="background-color: rgba(185, 169, 169, 0.623);">
+                                <img src=assets/img/fotoparismdn.jpg id="fotoparis">
+                                <div class="row">
+                                  <div class="col-lg-6">
+                                    <p style="text-align: justify;" class="fw-bold">
+                                      Kota Madiun adalah sebuah kota yang terletak di Provinsi Jawa Timur, Indonesia. Dikenal sebagai "Kota Pendekar," Madiun memiliki sejarah yang kaya dan beragam budaya. Kota ini merupakan pusat perdagangan dan industri kecil, serta terkenal dengan kerajinan tangan, terutama batik.
+                                    </p>
+                                  </div>
+                                  <div class="col-lg-6">
+                                    <p style="text-align: justify;" class="fw-bold">
+                                      Madiun juga dikenal dengan kulinernya, seperti nasi pecel dan berbagai camilan tradisional. Selain itu, kota ini memiliki beberapa tempat wisata menarik, seperti alun-alun, taman, dan situs sejarah. Secara keseluruhan, Madiun menawarkan kombinasi antara kehidupan perkotaan yang dinamis dan nuansa pedesaan yang kental.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       </section>
+                       <!-- End Hidden Text -->
+
+                       <!-- Sejarah Section -->
+                       <section id="sejarah" class="sejarah section">
+                        <div class="container" data-aos="fade-up" data-aos-delay="100">
+                          <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                              <div class="sejarah d-flex flex-column aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" style="background-color: rgba(185, 169, 169, 0.623); border-radius: 15px; padding: 20px;">
+                                <h2 class="text-center fw-bold mb-4">Sejarah Singkat Kota Madiun</h2>
+                                <div class="position-relative" style="overflow: hidden;">
+                                  <p style="text-align: justify; padding: 0 15px; font-size: 1.25em;" class="fw-bold">
+                                    Kota Madiun adalah sebuah kota yang terletak di Provinsi Jawa Timur, Indonesia. Dikenal sebagai "Kota Pendekar," Madiun memiliki sejarah yang kaya dan beragam budaya. Kota ini merupakan pusat perdagangan dan industri kecil, serta terkenal dengan kerajinan tangan, terutama batik.
+                                  </p>
+                                  <div class="blur-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; height: 150px; background: linear-gradient(to bottom, rgba(185, 169, 169, 0), rgba(185, 169, 169, 1)); pointer-events: none;"></div>
+                                  <div class="overlay-text" style="position: absolute; bottom: 10px; right: 15px; text-align: right;">
+                                    <a href="sejarah.html" class="read-more-link" style="background-color: rgba(185, 169, 169, 0.8); padding: 5px 10px; border-radius: 5px; text-decoration: none; color: #000; font-weight: bold;">Baca Selengkapnya</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       </section>
+                       <!-- End Sejarah Section -->
+
+                       <!-- Tempat Pariwisata Section -->
+                       <section id="tempat" class="tempat section">
+                        <div class="container" data-aos="fade-up" data-aos-delay="100">
+                          <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                              <div class="tempat d-flex flex-column aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" style="background-color: rgba(185, 169, 169, 0.623); border-radius: 15px; padding: 20px;">
+                                <h2 class="text-center fw-bold mb-4">Tempat Pariwisata di Kota Madiun</h2>
+                                <div class="position-relative" style="overflow: hidden;">
+                                  <p style="text-align: justify; padding: 0 15px; font-size: 1.25em;" class="fw-bold">
+                                    Kota Madiun memiliki beberapa tempat pariwisata yang menarik, seperti alun-alun, taman, dan situs sejarah. Setiap destinasi menawarkan pengalaman unik bagi pengunjung, mulai dari keindahan alam hingga nilai sejarah yang kaya.
+                                  </p>
+                                  <div class="blur-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; height: 150px; background: linear-gradient(to bottom, rgba(185, 169, 169, 0), rgba(185, 169, 169, 1)); pointer-events: none;"></div>
+                                  <div class="overlay-text" style="position: absolute; bottom: 10px; right: 15px; text-align: right;">
+                                    <a href="pariwisata.html" class="read-more-link" style="background-color: rgba(185, 169, 169, 0.8); padding: 5px 10px; border-radius: 5px; text-decoration: none; color: #000; font-weight: bold;">Baca Selengkapnya</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       </section>
+                       <!-- End Tempat Pariwisata Section -->
+
+                       <!-- Kuliner Section -->
+                       <section id="kuliner" class="kuliner section">
+                        <div class="container" data-aos="fade-up" data-aos-delay="100">
+                          <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                              <div class="kuliner d-flex flex-column aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" style="background-color: rgba(185, 169, 169, 0.623); border-radius: 15px; padding: 20px;">
+                                <h2 class="text-center fw-bold mb-4">Kuliner Khas Kota Madiun</h2>
+                                <div class="position-relative" style="overflow: hidden;">
+                                  <p style="text-align: justify; padding: 0 15px; font-size: 1.25em;" class="fw-bold">
+                                    Madiun terkenal dengan berbagai kuliner khasnya yang lezat dan menggugah selera. Dari nasi pecel yang terkenal hingga camilan tradisional, kota ini menawarkan pengalaman kuliner yang tak terlupakan.
+                                  </p>
+                                  <div class="blur-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; height: 150px; background: linear-gradient(to bottom, rgba(185, 169, 169, 0), rgba(185, 169, 169, 1)); pointer-events: none;"></div>
+                                  <div class="overlay-text" style="position: absolute; bottom: 10px; right: 15px; text-align: right;">
+                                    <a href="kuliner.html" class="read-more-link" style="background-color: rgba(185, 169, 169, 0.8); padding: 5px 10px; border-radius: 5px; text-decoration: none; color: #000; font-weight: bold;">Baca Selengkapnya</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       </section>
+                       <!-- End Kuliner Section --> 
+
+                       <!-- Budaya & Tradisi Section -->
+                       <section id="budaya" class="budaya section">
+                        <div class="container" data-aos="fade-up" data-aos-delay="100">
+                          <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                              <div class="budaya d-flex flex-column aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" style="background-color: rgba(185, 169, 169, 0.623); border-radius: 15px; padding: 20px;">
+                                <h2 class="text-center fw-bold mb-4">Budaya & Tradisi Kota Madiun</h2>
+                                <div class="position-relative" style="overflow: hidden;">
+                                  <p style="text-align: justify; padding: 0 15px; font-size: 1.25em;" class="fw-bold">
+                                    Kota Madiun memiliki kekayaan budaya dan tradisi yang unik dan menarik. Dari seni pertunjukan tradisional hingga upacara adat, Madiun menjaga warisan budayanya dengan baik.
+                                  </p>
+                                  <div class="blur-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; height: 150px; background: linear-gradient(to bottom, rgba(185, 169, 169, 0), rgba(185, 169, 169, 1)); pointer-events: none;"></div>
+                                  <div class="overlay-text" style="position: absolute; bottom: 10px; right: 15px; text-align: right;">
+                                    <a href="budaya.html" class="read-more-link" style="background-color: rgba(185, 169, 169, 0.8); padding: 5px 10px; border-radius: 5px; text-decoration: none; color: #000; font-weight: bold;">Baca Selengkapnya</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       </section>
+                       <!-- End Budaya & Tradisi Section -->   
+                    </main>
+
+                    <footer id="footer" class="footer light-background">
+                      <div class="container">
+                        <div class="copyright text-center">
+                          <p>
+                            © <span>Copyright</span>
+                            <strong class="px-1 sitename">Team SMAN 6 Madiun</strong>
+                            <span>All Rights Reserved<br /></span>
+                          </p>
+                        </div>
+                        <div class="social-links d-flex justify-content-center">
+                          <a href=""><i class="bi bi-twitter-x"></i></a>
+                          <a href=""><i class="bi bi-facebook"></i></a>
+                          <a href=""><i class="bi bi-instagram"></i></a>
+                          <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                      </div>
+                    </footer>
+
+                    <!-- Scroll Top -->
+                    <a
+                      href="#"
+                      id="scroll-top"
+                      class="scroll-top d-flex align-items-center justify-content-center"
+                      ><i class="bi bi-arrow-up-short"></i
+                    ></a>
+
+                    <!-- Preloader -->
+                    <div id="preloader"></div>
+
+                    <!-- Vendor JS Files -->
+                    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <script src="assets/vendor/php-email-form/validate.js"></script>
+                    <script src="assets/vendor/aos/aos.js"></script>
+                    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+                    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+                    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+                    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+                    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+                    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+                    <!-- Main JS File -->
+                    <script src="assets/js/main.js"></script>
+
+                  </body>
+                </html>
